@@ -48,8 +48,7 @@
 	<bean parent="serviceContext">
 		<property name="moduleService">
 			<list>
-				<value>${project.parent.groupId}.${project.parent.artifactId}.LoginAuditService
-				</value>
+				<value>${project.parent.groupId}.${project.parent.artifactId}.LoginAuditService</value>
 				<ref bean="loginauditService" />
 			</list>
 		</property>
