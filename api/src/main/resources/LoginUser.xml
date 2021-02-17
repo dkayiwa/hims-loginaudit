@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="org.openmrs.module.loginaudit.model">
+
+	<class name="LoginUser" table="login_audit" batch-size="500">
+
+		<id name="loginauditID" type="int" column="login_audit_id"
+			unsaved-value="0">
+				<generator class="native" />
+		</id>
+		<property name="name" column="name" />
+		<many-to-one name="user" class="org.openmrs.User"
+		 column="user_id" cascade="none" lazy="false" /> 
+		<property name="startDateTime" column="startDateTime"  />
+		<property name="endtDateTime" column="endtDateTime"  />
+		
+	</class>
+</hibernate-mapping>
